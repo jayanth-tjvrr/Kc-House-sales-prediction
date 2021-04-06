@@ -1,0 +1,66 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" dir="ltr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>BankLoanPrediction</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #990202;">House Price Prediction</h1>
+        <br>
+        <h3 style="color: #02084f;">Please select from the below options to predict the Price of house</h3>
+        <br>
+    </div>
+    <div id="container" class="container">
+        <form method="POST">{%csrf_token%}
+            <input type="text" name="bedrooms" placeholder="Bedrooms" required="required"/>
+            <br><br>
+            <input type="text" name="bathrooms" placeholder="Bathrooms" required="required" />
+            <br><br>
+            <input type="text" name="sqft_living" placeholder="Total square foot" required="required" />
+            <br><br>
+            <input type="text" name="sqft_lot" placeholder="Square foot of Lot" required="required" />
+            <br><br>
+            <input type="text" name="floors" placeholder="floors" required="required" />
+            <br><br>
+            <input type="text" name="waterfront" placeholder="Water front" required="required" />
+            <br><br>
+            <input type="text" name="view" placeholder="View" required="required" />
+            <br><br>
+            <input type="text" name="condition" placeholder="Scale on 1-5" required="required" />
+            <br><br>
+            <input type="text" name="grade" placeholder="Grade" required="required" />
+            <br><br>
+            <input type="text" name="sqft_above" placeholder="Square foot from basement" required="required" />
+            <br><br>
+            <input type="text" name="sqft_basement" placeholder="Square foot of basement" required="required" />
+            <br><br>
+            <input type="text" name="yr_built" placeholder="Built Year" required="required" />
+            <br><br>
+            <input type="text" name="yr_renovated" placeholder="Renovated Year" required="required" />
+            <br><br>
+            <input type="text" name="zipcode" placeholder="Zip code" required="required" />
+            <br><br>
+            <input type="text" name="lat" placeholder="Latitute of House" required="required" />
+            <br><br>
+            <input type="text" name="long" placeholder="Longitude of House" required="required" />
+            <br><br>
+            <input type="text" name="sqft_living15" placeholder="Total living area after 2015" required="required" />
+            <br><br>
+            <input type="text" name="sqft_lot15" placeholder="Total Lot area after 2015" required="required" />
+            <br><br>
+              <input type="submit" value="submit" name="submit">
+        </form>
+        <br>
+        {% if d%}
+        {%else%}
+        <label for="Loan_approved_status">Predicted Price:</label>
+        <input type="text" name="" value="{{ans}}" disabled>
+        {%endif%}
+    </div>
+    
+</body>
+</html>
